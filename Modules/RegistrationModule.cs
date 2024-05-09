@@ -1,7 +1,17 @@
-﻿namespace biltiful.Modules
+﻿using biltiful.Operations;
+using biltiful.Operations.Registration;
+
+namespace biltiful.Modules
 {
     internal class RegistrationModule : IModule
     {
+        List<IOperation> operations = new List<IOperation>();
+
+        public RegistrationModule()
+        {
+            operations.Add(new RegisterClientOperation());
+        }
+
         private void _ClientRegistration()
         {
             Console.WriteLine("Cadastro de cliente");
@@ -36,7 +46,7 @@
         {
             ConsoleMenu menu = new("Cadastrar cliente", "Cadastrar fornecedor", "Cadastrar matéria-prima", "Cadastrar produto", "Clientes inadimplentes", "Fornecedores bloqueados");
 
-            menu.SetActionForOption(1, () => { _ClientRegistration(); });
+            menu.SetActionForOption(1, () => { operations[0].Execute(); });
             menu.SetActionForOption(2, () => { _ProviderRegistration(); });
             menu.SetActionForOption(3, () => { _FeedstockRegistration(); });
             menu.SetActionForOption(4, () => { _ProductRegistration(); });

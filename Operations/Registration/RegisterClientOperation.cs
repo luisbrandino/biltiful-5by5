@@ -13,6 +13,7 @@
 
             // independente de como os grupos vão implementar essa parte, seguindo essa arquitetura podemos "trocar" os modulos por outros 
             // já que garantimos que seguirá o mesmo formato
+            Console.ReadKey();
         }
 
     }
