@@ -1,4 +1,6 @@
-﻿namespace biltiful
+﻿using biltiful.Modules;
+
+namespace biltiful
 {
     internal class Program
     {

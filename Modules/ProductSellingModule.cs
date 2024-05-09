@@ -1,4 +1,4 @@
-﻿namespace biltiful
+﻿namespace biltiful.Modules
 {
     internal class ProductSellingModule : IModule
     {
